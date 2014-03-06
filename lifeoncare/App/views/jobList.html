@@ -1,0 +1,60 @@
+﻿<div style="top:-20px; position: relative" class="main-content">
+    <div style="top: -20px; position: relative; height: 1px" class="breadcrumbs" id="breadcrumbs">
+        <div class="page-header">
+            <h1 data-bind="text:JobListTitle"></h1>
+        </div>
+        <div class="nav-search" id="nav-search">
+            
+            <form class="form-search">
+                <span class="input-icon">
+                    <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                    <i class="icon-search nav-search-icon"></i>
+                </span>
+            </form>
+        </div><!-- #nav-search -->
+    </div>
+
+    <div class="page-content">
+        <div style="top: -60px; position: relative;" class="page-header">
+            <h1>
+                Jobs
+                <small>
+                    <i class="icon-double-angle-right"></i>
+                    <span data-bind="text: Title"></span>
+                </small>
+            </h1>
+        </div>
+        <div style="top:-75px; position: relative" class="row">
+            <div class="col-xs-12">
+                <div class="tabbable">
+                    <div class="tab-content no-border no-padding">
+                        <div class="tab-pane in active">
+                            <div class="message-container">
+                                <div class="message-list-container">
+                                    <div class="message-list" id="message-list" data-bind="foreach: Jobs">
+                                        <div class="message-item">
+                                            <span style="width: 250px" class="sender" data-bind="text:city"/>
+                                            <span style="width: 90px;top: 8px;position: relative;" class="time" data-bind="text: date"></span>
+
+                                            <span style="width: 200px" class="summary">
+                                                <span class="text" data-bind="text: title"/>
+                                                
+                                            </span>
+                                            <span style="width: 150px" class="summary">
+                                                <span class="text" data-bind="text: skills"/>
+                                            </span>
+                                            <button data-bind="visible: $parent.showApply, click:$parent.ClickShowMessage"  type="button" class="btn btn-info">View Job Detail</button>
+                                            <button data-bind="visible: $parent.showCancel, click: $parent.ClickShowApplications"  type="button" class="btn btn-info">View Applications</button>
+                                            <button data-bind="visible: $parent.showCancel, click: $parent.ClickDelete"  type="button" class="btn btn-danger">Delete</button>
+                                            <button data-bind="visible: $parent.showCancelApply, click: $parent.ClickCancelApp"  type="button" class="btn btn-danger">Cancel Application</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

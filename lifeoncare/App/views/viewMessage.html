@@ -1,0 +1,12 @@
+﻿<div class="messageBox">
+    <div class="modal-header">
+        <h3 data-bind="text: Title"></h3>
+    </div>
+    <div class="modal-body">
+        <p class="message" data-bind="text: Message"></p>
+    </div>
+    <div class="modal-footer">
+        <button data-bind="visible:CanApply, click: ClickApply"  type="button" class="btn btn-success">Apply</button>
+        <button data-bind="click: ClickCancel"  type="button" class="btn btn-danger">Close</button>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+
+
+define(["plugins/router", "datacontext", "notifier"],function(router, dc, notifier){
+   var viewmodel = function(){
+
+       var name = ko.observable("");
+       var phone = ko.observable(0);
+       var city = ko.observable("");
+       var skills = ko.observable("");
+
+
+       var username =ko.observable("");
+
+       return {
+           viewUrl: 'views/profile',
+           Name: name,
+           Phone: phone,
+           City: city,
+           Skills: skills,
+
+<<<<<<< HEAD
+           ClickOnSave: function() {
+
+               dc.Login.updateUser(username(), {
+                       name: name(),
+                       phone: phone(),
+                       city: city(),
+                       skills: skills()
+                   }, function() {
+                       notifier.SuccessMessage("Profile updated");
+                       name("");
+                       phone(0);
+                       city("");
+                       skills("");
+                       username("");
+                       router.navigateBack();
+                   }, function() {
+                       notifier.ErrorMessage("Error while updating your profile")
+                   }
+               )
+=======
+
+           ClickOnSave: function(){
+
+
+               if(name()!="" && phone() !="" && city() != "" && skills !="" ){
+                   dc.Login.updateUser(username(), {
+                           name: name(),
+                           phone: phone(),
+                           city: city(),
+                           skills: skills()
+                       }, function(){
+                           notifier.SuccessMessage("Profile updated");
+                           name("");
+                           phone(0);
+                           city("");
+                           skills("");
+                           username("");
+                           router.navigateBack();
+                       }, function(){
+                           notifier.ErrorMessage("Error while updating your profile.")
+                       }
+                   )
+               }else{     notifier.ErrorMessage("All fields are required.") }
+>>>>>>> b8570a090fb6298760ac00d0bf66ac8e18d403a7
+
+           },
+           ClickOnBack: function() {
+               router.navigateBack();
+           },
+
+           activate: function() {
+               var currentUser = dc.Login.getCurrentUser();
+
+               name(currentUser.name);
+               phone(currentUser.phone);
+               city(currentUser.city);
+               if (currentUser.skills) skills(currentUser.skills.join());
+
+               username(currentUser.username);
+           },
+           attached: function() {
+               jQuery("#f_elem_city").autocomplete({
+                   source: function(request, response) {
+                       jQuery.getJSON(
+                           "http://gd.geobytes.com/AutoCompleteCity?callback=?&q=" + request.term,
+                           function(data) {
+                               response(data);
+                           }
+                       );
+                   },
+                   minLength: 3,
+                   select: function(event, ui) {
+                       var selectedObj = ui.item;
+                       jQuery("#f_elem_city").val(selectedObj.value);
+                       city(selectedObj.value);
+                       return false;
+                   },
+                   open: function() {
+                       jQuery(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+                   },
+                   close: function() {
+                       jQuery(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+                   }
+               });
+               jQuery("#f_elem_city").autocomplete("option", "delay", 100);
+           }
+       };
+
+   }
+
+    return viewmodel;
+});

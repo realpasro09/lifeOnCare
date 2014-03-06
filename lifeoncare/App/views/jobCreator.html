@@ -1,0 +1,64 @@
+<div style="top:-20px; position: relative" class="main-content"> 
+    <div class="page-content">
+        <div style="position: relative; top: -40px" class="page-header">
+            <h1>
+                Create a Job
+                <small>
+                    <i class="icon-double-angle-right"></i>
+                    Try to fill all the fields
+                </small>
+            </h1>
+        </div>
+        <div style="position: relative; top: -60px" class="row">
+            <div class="col-xs-12">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label style="width: 150px" class="col-sm-3 control-label no-padding-right" for="form-field-1"> Job Title </label>
+                        <div class="col-sm-9">
+                            <input type="text" id="form-field-1" placeholder="Enter a Title" class="col-xs-10 col-sm-5" data-bind="value: Title" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label style="width: 150px" class="col-sm-3 control-label no-padding-right" for="form-field-1"> Description </label>
+                        <div class="col-sm-9">
+                            <textarea id="Text1" placeholder="Enter a job description" rows="5" cols="54" data-bind="value: Description" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label style="width: 150px" class="col-sm-3 control-label no-padding-right" for="form-field-1"> City </label>
+                        <div class="col-sm-9">
+                            <input class="col-xs-10 col-sm-5" type="text" name="ff_nm_from[]" value="" id="f_elem_city" class="form-control" placeholder="Enter a city" data-bind="value: City"/>
+                        </div>
+                    </div>                    
+
+                    <div class="space-4"></div>
+
+                    <div class="form-group">
+                        <label style="width: 150px" class="col-sm-3 control-label no-padding-right" for="form-field-tags">Skills</label>
+                        <div class="col-sm-9">
+                            <input  type="text" name="tags" id="form-field-tags" placeholder="Enter tags" data-bind="value: Skills"/>
+                        </div>
+                    </div>
+
+                    <div class="clearfix form-actions">
+                        <div style="left: -150px" class="col-md-offset-3 col-md-9">
+                            <button class="btn btn-info" type="button" data-bind="click: ClickOnCreate">
+                                <i class="icon-ok bigger-110"></i>
+                                Submit
+                            </button>
+
+                            &nbsp; &nbsp; &nbsp;
+
+                            <button class="btn" type="reset">
+                                <i class="icon-undo bigger-110"></i>
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="hr hr-24"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

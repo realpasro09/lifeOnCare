@@ -1,0 +1,111 @@
+﻿<div>
+    <div style="height: 10px" class="navbar navbar-green" id="navbar">
+        <script type="text/javascript">
+            try {
+                ace.settings.check('navbar', 'fixed');
+            } catch (e) { }
+        </script>
+
+        <div class="navbar-container" id="navbar-container">
+            <div class="navbar-header pull-left">
+                <a href="#" class="navbar-brand">
+                    <small>
+                        <img style="width:40px; height: 30px " src="../../Content/images/chooseajobman.png"/>
+                        Choose a Job,
+                        <span style="font-size: 12px"> Choose your Future</span>
+                    </small>
+
+                </a><!-- /.brand -->
+            </div><!-- /.navbar-header -->
+
+            <div class="navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">                    
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <img class="nav-user-photo" src="../../Content/images/User.png" alt="Jason's Photo" />
+                            <span class="user-info">
+                                <small>Welcome,</small>
+                                <span data-bind="text:Name"></span>
+                            </span>
+                        </a>                       
+                    </li>
+                </ul><!-- /.ace-nav -->
+            </div><!-- /.navbar-header -->
+        </div><!-- /.container -->
+    </div>
+
+    <div class="main-container" id="main-container">
+        <div class="main-container-inner">
+            <a class="menu-toggler" id="menu-toggler" href="#">
+                <span class="menu-text"></span>
+            </a>
+            
+            <div style="top:-20px" class="sidebar" id="sidebar">                
+
+                <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                    <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                        <button title="Available Jobs" class="btn btn-success" data-bind="click: ClickListAvailableJobs">
+                            <i class="icon-th-list"></i>
+                        </button>
+
+                        <button title="Create a Job" class="btn btn-info" data-bind="click: ClickCreateJobs">
+                            <i class="icon-briefcase"></i>
+                        </button>
+
+                        <button title="Profile" class="btn btn-warning" data-bind="click: ClickProfile">
+                            <i class="icon-cog"></i>
+                        </button>
+
+                        <button title="Logout" class="btn btn-danger" data-bind="click: ClickLogout">
+                            <i class="icon-off"></i>
+                        </button>
+                    </div>
+
+                </div><!-- #sidebar-shortcuts -->
+
+                <ul id="sidebarpanel" class="nav nav-list" style="height: 80px">
+                    <li id="first">
+                        <a href="#welcome" data-bind="click: ClickListAvailableJobs">
+                            <i style="position: relative; top: -10px" class="icon-th-list"></i>
+                            <span style="position: relative; top: -10px" class="menu-text"> Available Jobs </span>
+                        </a>
+                    </li>
+                    <li id="second">
+                        <a href="#welcome" data-bind="click: ClickListCreatedJobs">
+                            <i style="position: relative; top: -10px" class="icon-th-list"></i>
+                            <span style="position: relative; top: -10px" class="menu-text"> Created Jobs </span>
+                        </a>
+                    </li>
+                    <li id="third">
+                        <a href="#welcome" data-bind="click: ClickListAppliedJobs">
+                            <i style="position: relative; top: -10px" class="icon-th-list"></i>
+                            <span style="position: relative; top: -10px" class="menu-text"> Applied Jobs </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#welcome" data-bind="click: ClickCreateJobs">
+                            <i style="position: relative; top: -10px" class="icon-briefcase"></i>
+                            <span style="position: relative; top: -10px" class="menu-text"> Create a Job </span>
+                        </a>
+                    </li>   
+                    <li>
+                        <a href="#welcome"  data-bind="click: ClickProfile">
+                            <i style="position: relative; top: -10px" class="icon-cog"></i>
+                            <span style="position: relative; top: -10px" class="menu-text">  Profile </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#welcome" data-bind="click: ClickLogout">
+                            <i style="position: relative; top: -10px" class="icon-off"></i>
+                            <span style="position: relative; top: -10px" class="menu-text">  Logout </span>
+                        </a>
+                    </li>
+                </ul><!-- /.nav-list -->
+            </div>
+            
+            
+            <div data-bind="compose: ActualViewmodel"></div>
+            
+        </div><!-- /.main-container-inner -->
+    </div>
+</div>

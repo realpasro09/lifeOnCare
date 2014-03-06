@@ -1,0 +1,28 @@
+﻿<div style="width: 800px"  class="messageBox">
+    <div class="modal-header">
+        <h3 data-bind="text: Title"></h3>
+    </div>
+    <div class="modal-body">
+        <div class="message-list-container">
+            <p class="message" data-bind="visible: ShowMessage">There are no job applications available</p>
+            <div class="message-list" id="message-list" data-bind="foreach: Users">
+                <div class="message-item">
+                    
+                    <span style="width: 150px" class="sender" data-bind="text: Name"/>
+                    <span style="width: 90px;top: 8px;position: relative;" class="time" data-bind="text: Phone"></span>
+
+                    <span style="width: 80px" class="summary">
+                        <span class="text" data-bind="text: Email"/>
+                                                
+                    </span>
+                    <span style="width: 200px" class="summary">
+                        <span class="text" data-bind="text: Skills"/>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button data-bind="click: ClickCancel"  type="button" class="btn btn-danger">Close</button>
+    </div>
+</div>
